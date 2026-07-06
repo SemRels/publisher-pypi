@@ -1,0 +1,19 @@
+# SPDX-License-Identifier: Apache-2.0
+# SPDX-FileCopyrightText: 2026 The publisher-pypi Authors
+# yaml-language-server: $schema=https://semrel.io/schema/v1.json
+#
+# semrel uses itself to manage this plugin's releases.
+# version_ceiling keeps releases in 0.x.x until deliberately promoted to 1.0.0.
+
+tagPrefix: "v"
+version_ceiling: "1.0.0"
+ceiling_strategy: clamp
+commit_changelog: false
+tag_exists_strategy: update-changelog
+
+branches:
+  - name: main
+
+plugins:
+  - uses: condition-github-actions
+    phase: condition
