@@ -31,7 +31,7 @@ func run(stdout, stderr io.Writer, getenv func(string) string, pub publisher) in
 		version = getenv("SEMREL_NEXT_VERSION")
 	}
 	if version == "" {
-		fmt.Fprintln(stderr, "publisher-pypi: SEMREL_VERSION is required")
+		_, _ = fmt.Fprintln(stderr, "publisher-pypi: SEMREL_VERSION is required")
 		return 1
 	}
 
@@ -46,7 +46,7 @@ func run(stdout, stderr io.Writer, getenv func(string) string, pub publisher) in
 	}
 
 	if err := pub.Publish(context.Background(), cfg, stdout, stderr); err != nil {
-		fmt.Fprintln(stderr, "publisher-pypi:", err)
+		_, _ = fmt.Fprintln(stderr, "publisher-pypi:", err)
 		return 1
 	}
 
