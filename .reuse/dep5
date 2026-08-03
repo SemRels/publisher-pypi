@@ -44,3 +44,8 @@ Files: LICENSE
  LICENSES/Apache-2.0.txt
 Copyright: 2026 The publisher-pypi Authors
 License: Apache-2.0
+
+# JSON Schema files
+Files: schema/*.json
+Copyright: 2026 The publisher-pypi Authors
+License: Apache-2.0
