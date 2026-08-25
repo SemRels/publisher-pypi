@@ -1,6 +1,3 @@
-<!-- SPDX-License-Identifier: Apache-2.0 -->
-<!-- SPDX-FileCopyrightText: 2026 The publisher-pypi Authors -->
-
 # Contributing to publisher-pypi
 
 Thank you for your interest in contributing.
