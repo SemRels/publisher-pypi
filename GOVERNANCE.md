@@ -1,11 +1,8 @@
-<!-- SPDX-License-Identifier: Apache-2.0 -->
-<!-- SPDX-FileCopyrightText: 2026 The publisher-pypi Authors -->
-
 # Governance
 
 ## Overview
 
-publisher-pypi is an open source project governed by its maintainers and community contributors. This document describes how decisions are made and how to participate.
+{{PROJECT_NAME}} is an open source project governed by its maintainers and community contributors. This document describes how decisions are made and how to participate.
 
 ## Project Roles
 

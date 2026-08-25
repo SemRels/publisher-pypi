@@ -1,13 +1,10 @@
-<!-- SPDX-License-Identifier: Apache-2.0 -->
-<!-- SPDX-FileCopyrightText: 2026 The publisher-pypi Authors -->
-
 # Security Policy
 
 ## Supported Versions
 
 | Version | Supported |
 | --- | --- |
-| `main` / `main` | ? |
+| `main` / `{{DEFAULT_BRANCH}}` | ? |
 
 Update this table once stable releases exist.
 
@@ -15,9 +12,9 @@ Update this table once stable releases exist.
 
 **Do not open a public issue for security vulnerabilities.**
 
-Please report vulnerabilities through **[GitHub Security Advisories](https://github.com/SemRels/publisher-pypi/security/advisories/new)**.
+Please report vulnerabilities through **[GitHub Security Advisories]({{SECURITY_ADVISORY_URL}})**.
 
-Alternative contact: security@semrel.io
+Alternative contact: {{SECURITY_CONTACT}}
 
 ## What To Include
 
