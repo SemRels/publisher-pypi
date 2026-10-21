@@ -3,10 +3,11 @@
 
 # publisher-pypi
 
-[![CI](https://github.com/SemRels/publisher-pypi/actions/workflows/ci.yml/badge.svg)](https://github.com/SemRels/publisher-pypi/actions/workflows/ci.yml)
-[![Scorecard](https://api.scorecard.dev/projects/github.com/SemRels/publisher-pypi/badge)](https://scorecard.dev/viewer/?uri=github.com/SemRels/publisher-pypi)
-[![License](https://img.shields.io/github/license/SemRels/publisher-pypi)](LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/SemRels/publisher-pypi?label=version&color=blue)](https://github.com/SemRels/publisher-pypi/releases/latest)
+[![CI](https://github.com/SemRels/publisher-pypi/actions/workflows/ci.yml/badge.svg)](https://github.com/SemRels/publisher-pypi/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/SemRels/publisher-pypi)](LICENSE)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/SemRels/publisher-pypi/badge)](https://scorecard.dev/viewer/?uri=github.com/SemRels/publisher-pypi)
+[![REUSE status](https://api.reuse.software/badge/github.com/SemRels/publisher-pypi)](https://api.reuse.software/info/github.com/SemRels/publisher-pypi)
 
 PyPI publisher plugin for semrel. It builds Python source and wheel distributions with `python -m build` and uploads them with `twine upload`.
 
