@@ -1,6 +1,6 @@
 # Code of Conduct
 
-publisher-pypi is committed to providing a welcoming and harassment-free community.
+`publisher-pypi` is committed to providing a welcoming and harassment-free community.
 
 ## Our Pledge
 

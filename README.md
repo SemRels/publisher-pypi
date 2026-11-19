@@ -1,12 +1,13 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
-<!-- SPDX-FileCopyrightText: 2026 The publisher-pypi Authors -->
+<!-- SPDX-FileCopyrightText: 2026 The semrel Authors -->
 
 # publisher-pypi
 
-[![CI](https://github.com/SemRels/publisher-pypi/actions/workflows/ci.yml/badge.svg)](https://github.com/SemRels/publisher-pypi/actions/workflows/ci.yml)
-[![Scorecard](https://api.scorecard.dev/projects/github.com/SemRels/publisher-pypi/badge)](https://scorecard.dev/viewer/?uri=github.com/SemRels/publisher-pypi)
-[![License](https://img.shields.io/github/license/SemRels/publisher-pypi)](LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/SemRels/publisher-pypi?label=version&color=blue)](https://github.com/SemRels/publisher-pypi/releases/latest)
+[![CI](https://github.com/SemRels/publisher-pypi/actions/workflows/ci.yml/badge.svg)](https://github.com/SemRels/publisher-pypi/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/SemRels/publisher-pypi)](LICENSE)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/SemRels/publisher-pypi/badge)](https://scorecard.dev/viewer/?uri=github.com/SemRels/publisher-pypi)
+[![REUSE status](https://api.reuse.software/badge/github.com/SemRels/publisher-pypi)](https://api.reuse.software/info/github.com/SemRels/publisher-pypi)
 
 PyPI publisher plugin for semrel. It builds Python source and wheel distributions with `python -m build` and uploads them with `twine upload`.
 
@@ -43,23 +44,25 @@ Dry-run mode still runs the build step so CI can verify packaging metadata witho
 
 ```yaml
 plugins:
-  - name: publisher-pypi
-    path: ~/.semrel/plugins/semrel-plugin-publisher-pypi
-    env:
-      SEMREL_PLUGIN_PYPI_TOKEN: "${PYPI_API_TOKEN}"
+  - uses: "@semrel/publisher-pypi"
+    phase: release
+    args:
+      pypi_token: "${PYPI_API_TOKEN}"
       # Optional for TestPyPI
       # SEMREL_PLUGIN_PYPI_REPOSITORY_URL: "https://test.pypi.org/legacy/"
 ```
 
-## `SEMREL_PLUGIN_*` variables
+## Options
 
-| Name | Required | Description | Default |
-| --- | --- | --- | --- |
-| `SEMREL_PLUGIN_PYPI_TOKEN` | Yes, unless dry-run | PyPI API token used as `TWINE_PASSWORD`. | _none_ |
-| `SEMREL_PLUGIN_PYPI_REPOSITORY_URL` | Optional | Repository URL passed to `twine upload --repository-url`. Use `https://test.pypi.org/legacy/` for TestPyPI. | PyPI default |
-| `SEMREL_PLUGIN_WORKDIR` | Optional | Project directory where `python -m build` and `dist/` are evaluated. | `.` |
-| `SEMREL_PLUGIN_PYTHON_BIN` | Optional | Override the detected Python executable. | `python` or `python3` |
-| `SEMREL_PLUGIN_TWINE_BIN` | Optional | Override the `twine` executable name. | `twine` |
+Every option can be set as an entry under `args` in `.semrel.yaml`. semrel passes each entry to the plugin as the environment variable shown in the table, so you can also set that variable directly (for example in your CI environment) instead of using `args`.
+
+| Argument | Environment variable | Required | Description | Default |
+| --- | --- | --- | --- | --- |
+| `pypi_token` | `SEMREL_PLUGIN_PYPI_TOKEN` | Yes, unless dry-run | PyPI API token used as `TWINE_PASSWORD`. | _none_ |
+| `pypi_repository_url` | `SEMREL_PLUGIN_PYPI_REPOSITORY_URL` | Optional | Repository URL passed to `twine upload --repository-url`. Use `https://test.pypi.org/legacy/` for TestPyPI. | PyPI default |
+| `workdir` | `SEMREL_PLUGIN_WORKDIR` | Optional | Project directory where `python -m build` and `dist/` are evaluated. | `.` |
+| `python_bin` | `SEMREL_PLUGIN_PYTHON_BIN` | Optional | Override the detected Python executable. | `python` or `python3` |
+| `twine_bin` | `SEMREL_PLUGIN_TWINE_BIN` | Optional | Override the `twine` executable name. | `twine` |
 
 ## `SEMREL_*` release context used
 
